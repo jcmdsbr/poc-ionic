@@ -1,0 +1,49 @@
+<app-navbar [title]="title" [isShowLogout]="true"></app-navbar>
+<ion-content padding>
+  <form [formGroup]="form">
+    <ion-item *ngIf="isUpdate">
+      <ion-label position="floating">Código</ion-label>
+      <ion-input type="text" name="id" formControlName="id"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" name="name" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" name="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Cpf</ion-label>
+      <ion-input type="text" name="cpf" mask="000.000.000-00" formControlName="cpf"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Celular</ion-label>
+      <ion-input type="text" name="phone" mask="(00) 00000-0000" formControlName="phone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Cep</ion-label>
+      <ion-input type="text" name="zipcode" mask="00000-000" formControlName="address.zipcode" (ionBlur)="getAddress()">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Logradouro</ion-label>
+      <ion-input type="text" name="street" formControlName="address.street"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Bairro</ion-label>
+      <ion-input type="text" name="district" formControlName="address.district"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Cidade</ion-label>
+      <ion-input type="text" name="city" formControlName="address.city"></ion-input>
+    </ion-item>
+
+  </form>
+  <br />
+  <ion-button expand="full" color="danger" (click)="save()">Salvar</ion-button>
+</ion-content>

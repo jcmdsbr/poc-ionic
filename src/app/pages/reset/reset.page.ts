@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, NavController } from '@ionic/angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { NavController } from '@ionic/angular';
 import { AlertService } from 'src/app/services/alert.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { CustomValidator } from 'src/app/validators/custom.validator';
-import { UserUtil } from 'src/app/utils/user.util';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.page.html',
-  styleUrls: ['./signup.page.scss'],
+  selector: 'app-reset',
+  templateUrl: './reset.page.html',
+  styleUrls: ['./reset.page.scss'],
 })
-export class SignupPage implements OnInit {
+export class ResetPage implements OnInit {
   form: FormGroup;
-  title: string = 'Registrar-se';
+  title: string = "Resetar a Senha !";
+
   constructor(
     private navCtrl: NavController,
     private fb: FormBuilder,
@@ -34,21 +34,20 @@ export class SignupPage implements OnInit {
       ])]
     });
   }
+
   ngOnInit() {
   }
 
-  register() {
-    if (this.form.valid) {
-      let user = this.form.value;
-      this.service.signup(user).subscribe(() => {
-        UserUtil.set(user);
-        this.serviceAlert.success("Usuário cadastrado com sucesso!");
-        this.navCtrl.navigateRoot('/home');
-      });
-    }
-  }
+  reset() {
+    this.service.getFirstByEmail(this.form.controls["email"].value).subscribe((users) => {
+      if (users && users.length > 0) {
+        let user = this.form.value;
+        user.id = users[0].id;
+        this.service.reset(user).subscribe(() => {
+          this.navCtrl.navigateRoot('/home');
+        })
+      }
+    })
 
-  login() {
-    this.navCtrl.navigateRoot('/login');
   }
 }

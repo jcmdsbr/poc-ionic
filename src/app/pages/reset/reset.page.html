@@ -5,15 +5,11 @@
       <ion-label position="floating">Email</ion-label>
       <ion-input type="email" name="email" formControlName="email"></ion-input>
     </ion-item>
+
     <ion-item>
-      <ion-label position="floating">Senha</ion-label>
+      <ion-label position="floating"> Nova Senha</ion-label>
       <ion-input type="password" name="password" formControlName="password"></ion-input>
     </ion-item>
   </form>
-  <br />
-  <ion-button expand="full" (click)="register()" color="danger">Registrar</ion-button>
-  <br />
-  <p text-center>Você já possui uma conta?</p>
-  <br />
-  <ion-button expand="full" color="primary" (click)="login()">Login</ion-button>
+  <ion-button (click)="reset()" expand="full" color="primary">Resetar</ion-button>
 </ion-content>

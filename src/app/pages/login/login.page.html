@@ -1,9 +1,22 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-navbar [title]="title"></app-navbar>
+<ion-content padding>
+  <form [formGroup]="form">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" name="email" formControlName="email"></ion-input>
+    </ion-item>
 
-<ion-content>
-
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" name="password" formControlName="password"></ion-input>
+    </ion-item>
+  </form>
+  <br />
+  <ion-button text-right color="medium" (click)="forgotPassword()">Esqueceu a senha?</ion-button>
+  <br />
+  <ion-button (click)="login()" expand="full" color="primary">Login</ion-button>
+  <br />
+  <p text-center>Não possui uma conta?</p>
+  <br />
+  <ion-button expand="full" color="danger" (click)="register()">Registrar-se</ion-button>
 </ion-content>

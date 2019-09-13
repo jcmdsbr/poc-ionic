@@ -1,214 +1,245 @@
 {
-    "contacts": [
-        {
-            "id": 2,
-            "name": "Carlos",
-            "email": "email@provider.com",
-            "cpf": "87270777136",
-            "phone": "33841111",
-            "adress": {
-                "zipcode": "01001-00",
-                "street": "Praça da Sé",
-                "district": "Sé",
-                "city": "São Paulo"
-            },
-            "image": ""
-        },
-        {
-            "id": 1,
-            "name": "João",
-            "email": "email@provider.com",
-            "cpf": "87270777136",
-            "phone": "33841111",
-            "adress": {
-                "zipcode": "01001-00",
-                "street": "Praça da Sé",
-                "district": "Sé",
-                "city": "São Paulo"
-            },
-            "image": ""
-        },
-        {
-            "id": 3,
-            "name": "Milton",
-            "email": "email@provider.com",
-            "cpf": "87270777136",
-            "phone": "33841111",
-            "adress": {
-                "zipcode": "01001-00",
-                "street": "Praça da Sé",
-                "district": "Sé",
-                "city": "São Paulo"
-            },
-            "image": ""
-        },
-        {
-            "id": 4,
-            "name": "André",
-            "email": "email@provider.com",
-            "cpf": "87270777136",
-            "phone": "33841111",
-            "adress": {
-                "zipcode": "01001-00",
-                "street": "Praça da Sé",
-                "district": "Sé",
-                "city": "São Paulo"
-            },
-            "image": ""
-        },
-        {
-            "id": 5,
-            "name": "Ronaldo",
-            "email": "email@provider.com",
-            "cpf": "87270777136",
-            "phone": "33841111",
-            "adress": {
-                "zipcode": "01001-00",
-                "street": "Praça da Sé",
-                "district": "Sé",
-                "city": "São Paulo"
-            },
-            "image": ""
-        },
-        {
-            "id": 6,
-            "name": "Romario",
-            "email": "email@provider.com",
-            "cpf": "87270777136",
-            "phone": "33841111",
-            "adress": {
-                "zipcode": "01001-00",
-                "street": "Praça da Sé",
-                "district": "Sé",
-                "city": "São Paulo"
-            },
-            "image": ""
-        },
-        {
-            "id": 7,
-            "name": "Arthur",
-            "email": "email@provider.com",
-            "cpf": "87270777136",
-            "phone": "33841111",
-            "adress": {
-                "zipcode": "01001-00",
-                "street": "Praça da Sé",
-                "district": "Sé",
-                "city": "São Paulo"
-            },
-            "image": ""
-        },
-        {
-            "id": 8,
-            "name": "Ana",
-            "email": "email@provider.com",
-            "cpf": "87270777136",
-            "phone": "33841111",
-            "adress": {
-                "zipcode": "01001-00",
-                "street": "Praça da Sé",
-                "district": "Sé",
-                "city": "São Paulo"
-            },
-            "image": ""
-        },
-        {
-            "id": 9,
-            "name": "Maria",
-            "email": "email@provider.com",
-            "cpf": "87270777136",
-            "phone": "33841111",
-            "adress": {
-                "zipcode": "01001-00",
-                "street": "Praça da Sé",
-                "district": "Sé",
-                "city": "São Paulo"
-            },
-            "image": ""
-        },
-        {
-            "id": 10,
-            "name": "Clara",
-            "email": "email@provider.com",
-            "cpf": "87270777136",
-            "phone": "33841111",
-            "adress": {
-                "zipcode": "01001-00",
-                "street": "Praça da Sé",
-                "district": "Sé",
-                "city": "São Paulo"
-            },
-            "image": ""
-        },
-        {
-            "id": 11,
-            "name": "Jhon",
-            "email": "email@provider.com",
-            "cpf": "87270777136",
-            "phone": "33841111",
-            "adress": {
-                "zipcode": "01001-00",
-                "street": "Praça da Sé",
-                "district": "Sé",
-                "city": "São Paulo"
-            },
-            "image": ""
-        },
-        {
-            "id": 12,
-            "name": "Joana",
-            "email": "email@provider.com",
-            "cpf": "87270777136",
-            "phone": "33841111",
-            "adress": {
-                "zipcode": "01001-00",
-                "street": "Praça da Sé",
-                "district": "Sé",
-                "city": "São Paulo"
-            },
-            "image": ""
-        },
-        {
-            "id": 13,
-            "name": "Silvia",
-            "email": "email@provider.com",
-            "cpf": "87270777136",
-            "phone": "33841111",
-            "adress": {
-                "zipcode": "01001-00",
-                "street": "Praça da Sé",
-                "district": "Sé",
-                "city": "São Paulo"
-            },
-            "image": ""
-        },
-        {
-            "id": 14,
-            "name": "Erick",
-            "email": "email@provider.com",
-            "cpf": "87270777136",
-            "phone": "33841111",
-            "adress": {
-                "zipcode": "01001-00",
-                "street": "Praça da Sé",
-                "district": "Sé",
-                "city": "São Paulo"
-            },
-            "image": ""
-        },
-        {
-            "id": 15,
-            "name": "Sueli",
-            "email": "email@provider.com",
-            "cpf": "87270777136",
-            "phone": "33841111",
-            "adress": {
-                "zipcode": "01001-00",
-                "street": "Praça da Sé",
-                "district": "Sé",
-                "city": "São Paulo"
-            },
-            "image": ""
-        }
-    ]
+  "users": [
+    {
+      "email": "admin@admin.com",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "email": "sample@sample.com",
+      "password": "asdasdasd",
+      "id": 2,
+      "roles": [
+        "SAMPLE"
+      ]
+    },
+    {
+      "email": "teste@trs.com",
+      "password": "123123123",
+      "id": 3
+    }
+  ],
+  "contacts": [
+    {
+      "id": 2,
+      "name": "Carlos",
+      "email": "email@provider.com",
+      "cpf": "87270777136",
+      "phone": "33841111",
+      "adress": {
+        "zipcode": "01001-00",
+        "street": "Praça da Sé",
+        "district": "Sé",
+        "city": "São Paulo"
+      },
+      "image": "http://lorempixel.com/50/50/"
+    },
+    {
+      "id": 1,
+      "name": "João",
+      "email": "email@provider.com",
+      "cpf": "87270777136",
+      "phone": "33841111",
+      "adress": {
+        "zipcode": "01001-00",
+        "street": "Praça da Sé",
+        "district": "Sé",
+        "city": "São Paulo"
+      },
+      "image": "http://lorempixel.com/50/50/"
+    },
+    {
+      "id": 3,
+      "name": "Milton",
+      "email": "email@provider.com",
+      "cpf": "87270777136",
+      "phone": "33841111",
+      "adress": {
+        "zipcode": "01001-00",
+        "street": "Praça da Sé",
+        "district": "Sé",
+        "city": "São Paulo"
+      },
+      "image": "http://lorempixel.com/50/50/"
+    },
+    {
+      "id": 4,
+      "name": "André",
+      "email": "email@provider.com",
+      "cpf": "87270777136",
+      "phone": "33841111",
+      "adress": {
+        "zipcode": "01001-00",
+        "street": "Praça da Sé",
+        "district": "Sé",
+        "city": "São Paulo"
+      },
+      "image": "http://lorempixel.com/50/50/"
+    },
+    {
+      "id": 5,
+      "name": "Ronaldo",
+      "email": "email@provider.com",
+      "cpf": "87270777136",
+      "phone": "33841111",
+      "adress": {
+        "zipcode": "01001-00",
+        "street": "Praça da Sé",
+        "district": "Sé",
+        "city": "São Paulo"
+      },
+      "image": "http://lorempixel.com/50/50/"
+    },
+    {
+      "id": 6,
+      "name": "Romario",
+      "email": "email@provider.com",
+      "cpf": "87270777136",
+      "phone": "33841111",
+      "adress": {
+        "zipcode": "01001-00",
+        "street": "Praça da Sé",
+        "district": "Sé",
+        "city": "São Paulo"
+      },
+      "image": "http://lorempixel.com/50/50/"
+    },
+    {
+      "id": 7,
+      "name": "Arthur",
+      "email": "email@provider.com",
+      "cpf": "87270777136",
+      "phone": "33841111",
+      "adress": {
+        "zipcode": "01001-00",
+        "street": "Praça da Sé",
+        "district": "Sé",
+        "city": "São Paulo"
+      },
+      "image": "http://lorempixel.com/50/50/"
+    },
+    {
+      "id": 8,
+      "name": "Ana",
+      "email": "email@provider.com",
+      "cpf": "87270777136",
+      "phone": "33841111",
+      "adress": {
+        "zipcode": "01001-00",
+        "street": "Praça da Sé",
+        "district": "Sé",
+        "city": "São Paulo"
+      },
+      "image": "http://lorempixel.com/50/50/"
+    },
+    {
+      "id": 9,
+      "name": "Maria",
+      "email": "email@provider.com",
+      "cpf": "87270777136",
+      "phone": "33841111",
+      "adress": {
+        "zipcode": "01001-00",
+        "street": "Praça da Sé",
+        "district": "Sé",
+        "city": "São Paulo"
+      },
+      "image": "http://lorempixel.com/50/50/"
+    },
+    {
+      "id": 10,
+      "name": "Clara",
+      "email": "email@provider.com",
+      "cpf": "87270777136",
+      "phone": "33841111",
+      "adress": {
+        "zipcode": "01001-00",
+        "street": "Praça da Sé",
+        "district": "Sé",
+        "city": "São Paulo"
+      },
+      "image": "http://lorempixel.com/50/50/"
+    },
+    {
+      "id": 11,
+      "name": "Jhon",
+      "email": "email@provider.com",
+      "cpf": "87270777136",
+      "phone": "33841111",
+      "adress": {
+        "zipcode": "01001-00",
+        "street": "Praça da Sé",
+        "district": "Sé",
+        "city": "São Paulo"
+      },
+      "image": "http://lorempixel.com/50/50/"
+    },
+    {
+      "id": 12,
+      "name": "Joana",
+      "email": "email@provider.com",
+      "cpf": "87270777136",
+      "phone": "33841111",
+      "adress": {
+        "zipcode": "01001-00",
+        "street": "Praça da Sé",
+        "district": "Sé",
+        "city": "São Paulo"
+      },
+      "image": "http://lorempixel.com/50/50/"
+    },
+    {
+      "id": 13,
+      "name": "Silvia",
+      "email": "email@provider.com",
+      "cpf": "87270777136",
+      "phone": "33841111",
+      "adress": {
+        "zipcode": "01001-00",
+        "street": "Praça da Sé",
+        "district": "Sé",
+        "city": "São Paulo"
+      },
+      "image": "http://lorempixel.com/50/50/"
+    },
+    {
+      "id": 14,
+      "name": "Erick",
+      "email": "email@provider.com",
+      "cpf": "87270777136",
+      "phone": "33841111",
+      "adress": {
+        "zipcode": "01001-00",
+        "street": "Praça da Sé",
+        "district": "Sé",
+        "city": "São Paulo"
+      },
+      "image": "http://lorempixel.com/50/50/"
+    },
+    {
+      "id": 15,
+      "name": "Sueli",
+      "email": "email@provider.com",
+      "cpf": "87270777136",
+      "phone": "33841111",
+      "adress": {
+        "zipcode": "01001-00",
+        "street": "Praça da Sé",
+        "district": "Sé",
+        "city": "São Paulo"
+      },
+      "image": "http://lorempixel.com/50/50/"
+    },
+    {
+      "id": 16,
+      "name": "jean carlos",
+      "email": "jcmds@hotmail.com",
+      "cpf": "442.624.098-05",
+      "phone": "(18) 98223-0104",
+      "address.zipcode": "15997-306",
+      "address.street": "Rua Cláudio Beviláqua",
+      "address.district": "Vila Cardim",
+      "address.city": "Matão"
+    }
+  ]
 }

@@ -1,20 +1,21 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Contatos</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-navbar [title]="title" [isShowLogout]="true"></app-navbar>
 <ion-content>
   <ion-list>
-    <ion-item-sliding>
+    <ion-item-sliding *ngFor="let contact of contacts | async">
       <ion-item>
-        <ion-label>Item</ion-label>
+        <ion-avatar slot="start">
+          <img src="{{contact.image}}">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{contact.name}}</h2>
+        </ion-label>
       </ion-item>
       <ion-item-options side="end">
         <ion-item-option color="primary">
-          <ion-icon slot="icon-only" name="create"></ion-icon>
+          <ion-icon slot="icon-only" name="create" (click)="update(contact)"></ion-icon>
         </ion-item-option>
         <ion-item-option color="danger">
-          <ion-icon slot="icon-only" name="trash"></ion-icon>
+          <ion-icon slot="icon-only" name="trash" (click)="delete(contact)"></ion-icon>
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
