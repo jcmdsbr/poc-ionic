@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
@@ -8,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { HomePage } from './home.page';
 import { NavbarModule } from 'src/app/modules/navbar.module';
 import { NgxMaskIonicModule } from 'ngx-mask-ionic'
+import { ContactFormComponent } from 'src/app/components/contact-form/contact-form.component';
 
 const routes: Routes = [
   {
@@ -19,12 +19,12 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
     NgxMaskIonicModule.forRoot(),
     NavbarModule
   ],
+  entryComponents: [ContactFormComponent],
   declarations: [HomePage]
 })
 export class HomePageModule { }

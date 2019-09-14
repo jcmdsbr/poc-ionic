@@ -15,8 +15,8 @@ export class ContactsService {
     return this.httpClient.get<Contact[]>(`${environment.baseUrl}/contacts`);
   }
 
-  getById(id: string): Observable<Contact[]> {
-    return this.httpClient.get<Contact[]>(`${environment.baseUrl}/contacts/${id}`);
+  getById(id: string): Observable<Contact> {
+    return this.httpClient.get<Contact>(`${environment.baseUrl}/contacts/${id}`);
   }
 
   create(Contact: Contact): Observable<any> {
@@ -24,7 +24,7 @@ export class ContactsService {
   }
 
   update(contact: Contact): Observable<any> {
-    return this.httpClient.put(`${environment.baseUrl}/contacts/${contact.id}`, Contact);
+    return this.httpClient.put(`${environment.baseUrl}/contacts/${contact.id}`, contact);
   }
 
   delete(id: string): Observable<any> {

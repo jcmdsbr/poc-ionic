@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { NavController, LoadingController } from '@ionic/angular';
+import { NavController, LoadingController, ModalController } from '@ionic/angular';
 import { AlertService } from 'src/app/services/alert.service';
 import { ContactsService } from 'src/app/services/contacts.service';
 import { ViacepService } from 'src/app/services/viacep.service';
@@ -15,8 +15,9 @@ export class ContactFormComponent implements OnInit {
 
   form: FormGroup;
   title: string = '';
+  isDisabled: boolean = false;
 
-  @Input() isUpdate: boolean = false;
+  @Input() flow: string = "Cadastrar";
   @Input() contactId: string;
 
   constructor(
@@ -25,17 +26,29 @@ export class ContactFormComponent implements OnInit {
     private serviceAlert: AlertService,
     private service: ContactsService,
     private serviceAddress: ViacepService,
-    private loadingController: LoadingController) {
-    this.isUpdate = this.contactId && this.contactId.length > 0;
-    this.title = this.isUpdate ? "Alterar Contato" : "Cadastrar Contato";
+    private loadingController: LoadingController,
+    private modalController: ModalController) {
+    this.title = this.flow + " Contato";
     this.initializeForm();
   }
 
   ngOnInit() {
-    if (this.isUpdate) {
-      this.service.getById(this.contactId).subscribe((res) => {
-        this.form.patchValue(res);
+    if (this.flow != "Cadastrar") {
+      this.service.getById(this.contactId).subscribe((response) => {
+        this.form.patchValue(response);
+        this.form.patchValue({
+          "address.street": response.address.street,
+          "address.zipcode": response.address.zipcode,
+          "address.district": response.address.district,
+          "address.city": response.address.city
+        });
+
         this.form.controls['id'].disable();
+
+        if (this.flow == "Detalhar") {
+          this.form.disable();
+          this.isDisabled = true;
+        }
       })
     }
   }
@@ -59,7 +72,6 @@ export class ContactFormComponent implements OnInit {
         Validators.required
       ])],
       phone: ['', Validators.compose([
-        Validators.minLength(11),
         Validators.required
       ])],
       "address.zipcode": ['', Validators.compose([
@@ -72,38 +84,40 @@ export class ContactFormComponent implements OnInit {
     });
   }
   async getAddress() {
-    const loading = await this.loadingController.create({
-      message: 'Buscando cep...'
-    });
-
-    await loading.present();
-
-    this.serviceAddress.get(this.form.controls["address.zipcode"].value)
-      .subscribe(async (response) => {
-        await loading.dismiss();
-        this.form.patchValue({
-          "address.street": response.street,
-          "address.district": response.district,
-          "address.city": response.city
-        });
+    if (this.form.controls["address.zipcode"].value.length > 0) {
+      const loading = await this.loadingController.create({
+        message: 'Buscando cep...'
       });
+
+      await loading.present();
+
+      this.serviceAddress.get(this.form.controls["address.zipcode"].value)
+        .subscribe(async (response) => {
+          await loading.dismiss();
+          this.form.patchValue({
+            "address.street": response.street,
+            "address.district": response.district,
+            "address.city": response.city
+          });
+        });
+    }
   }
 
-  async back(message: string = "") {
-    if (message.length != 0) { await this.serviceAlert.success(message) }
-    this.navCtrl.navigateRoot('/home');
+  exit() {
+    this.modalController.dismiss();
   }
 
-  async save() {
-    if (this.form.valid) {
+  save() {
+    if (this.form.valid && !this.isDisabled) {
       let contact = this.form.value;
-      if (this.isUpdate) {
+
+      contact.image = "http://lorempixel.com/50/50/";
+
+      if (this.flow == "Alterar") {
         contact.id = this.contactId;
-        this.service.update(contact).subscribe(async () =>
-          await this.back("Produto alterado com sucesso!"));
+        this.service.update(contact).subscribe(() => this.exit());
       } else {
-        this.service.create(contact).subscribe(async () =>
-          await this.back("Produto cadastrado com sucesso!"));
+        this.service.create(contact).subscribe(() => this.exit());
       }
     }
   }

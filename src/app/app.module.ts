@@ -11,6 +11,8 @@ import { AuthGuard } from './guards/auth.guard';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { NavbarModule } from './modules/navbar.module';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NavbarModule
   ],
   providers: [
     StatusBar,

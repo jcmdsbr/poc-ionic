@@ -1,4 +1,4 @@
-<app-navbar [title]="title" [isShowLogout]="true"></app-navbar>
+<app-navbar [title]="title"></app-navbar>
 <ion-content padding>
   <form [formGroup]="form">
     <ion-item *ngIf="isUpdate">
@@ -45,5 +45,6 @@
 
   </form>
   <br />
-  <ion-button expand="full" color="danger" (click)="save()">Salvar</ion-button>
+  <ion-button expand="full" color="primary" *ngIf="!isDisabled" (click)="save()">Salvar</ion-button>
+  <ion-button expand="full" color="danger" (click)="exit()">Sair</ion-button>
 </ion-content>

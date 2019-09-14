@@ -20,11 +20,15 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    this.contacts = this.service.get();
+    this.onLoadContacts();
   }
 
   dismissRegister() {
     this.modalController.dismiss();
+  }
+
+  onLoadContacts() {
+    this.contacts = this.service.get();
   }
 
   async create() {
@@ -35,14 +39,33 @@ export class HomePage implements OnInit {
     return await createModal.present();
   }
 
+  delete(contact: Contact) {
+    this.service.delete(contact.id.toString()).subscribe(() => this.onLoadContacts())
+  }
   async update(contact: Contact) {
-    this.dismissRegister();
+
     const createModal = await this.modalController.create({
       component: ContactFormComponent,
       componentProps: {
-        "isUpdate": true,
+        "flow": "Alterar",
         "contactId": contact.id
       }
+    });
+
+    createModal.onDidDismiss().then(() => this.onLoadContacts())
+
+    return await createModal.present();
+  }
+
+  async detail(contact: Contact) {
+
+    const createModal = await this.modalController.create({
+      component: ContactFormComponent,
+      componentProps: {
+        "flow": "Detalhar",
+        "contactId": contact.id
+      },
+
     });
     return await createModal.present();
   }
