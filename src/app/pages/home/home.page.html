@@ -1,6 +1,9 @@
 <app-navbar [title]="title" [isShowLogout]="true"></app-navbar>
 <ion-content>
   <ion-list>
+    <ion-list-header>
+      <ion-button (click)="create()">Novo Contato </ion-button>
+    </ion-list-header>
     <ion-item-sliding *ngFor="let contact of contacts | async">
       <ion-item>
         <ion-avatar slot="start">

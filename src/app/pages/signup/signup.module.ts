@@ -19,6 +19,7 @@ const routes: Routes = [
     CommonModule,
     IonicModule,
     RouterModule.forChild(routes),
+    FormsModule, ReactiveFormsModule,
     NavbarModule
   ],
   declarations: [SignupPage]

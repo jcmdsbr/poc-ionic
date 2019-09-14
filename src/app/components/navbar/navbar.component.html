@@ -4,8 +4,8 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="secondary">
-      <ion-button>
-        <ion-icon *ngIf="isShowLogout" slot="icon-only" name="exit"></ion-icon>
+      <ion-button *ngIf="isShowLogout" (click)="logout()">
+        <ion-icon slot="icon-only" name="exit"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-title>{{title}}</ion-title>

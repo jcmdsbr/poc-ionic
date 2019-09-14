@@ -32,10 +32,12 @@ export class HomePage implements OnInit {
   }
 
   async create() {
-    this.dismissRegister();
     const createModal = await this.modalController.create({
       component: ContactFormComponent
     });
+
+    createModal.onDidDismiss().then(() => this.onLoadContacts())
+
     return await createModal.present();
   }
 
