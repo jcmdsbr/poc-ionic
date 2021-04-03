@@ -32,3 +32,5 @@ With ready-made components, typography, and a gorgeous (yet extensible) base the
 
 - Ionic emulates native app UI guidelines and uses native SDKs, bringing the UI standards and device features of native apps together with the full power and flexibility of the open web. 
 Ionic uses Capacitor (or Cordova) to deploy natively, or runs in the browser as a Progressive Web App.
+
+**Check official documentation** [Redirect](https://ionicframework.com/start#basics)
